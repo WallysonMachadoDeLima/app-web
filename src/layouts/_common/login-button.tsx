@@ -26,7 +26,7 @@ export default function LoginButton({ sx }: Props) {
   return (
     <Button
       component={RouterLink}
-      //href={`https://jiparana.lasercinemas.com.br/auth/login?mobile=${isMobile}`}
+      href={`https://logincinema.com.br/`}
       variant="contained"
       sx={{
         mr: 1,
