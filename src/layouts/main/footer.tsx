@@ -74,7 +74,11 @@ export default function Footer() {
 
   const isHome = pathname === '/';
 
-  const [unidade, setUnidade] = useState<{ razaoSocial: string; cnpj: string; endereco: string }>();
+  const [unidade, setUnidade] = useState<{
+    razaoSocial: string;
+    cnpj: string;
+    endereco: string;
+  }>();
 
   useEffect(() => {
     FooterService.index(state.unidade.id).then((response) => {
@@ -114,15 +118,13 @@ export default function Footer() {
     >
       <Container
         sx={{
-          pt: { xs: 3, md: 5 },
+          pt: { xs: 23, md: 25 },
           pb: 5,
           textAlign: { xs: 'center', md: 'unset' },
           marginX: { xs: 'auto', md: 'auto' },
         }}
       >
         <Box
-          component="img"
-          src={`/assets/logo/logo_full_${settings.themeMode}.png`}
           sx={{
             width: { xs: 110, sm: 130, md: 145 },
             mb: 2,
@@ -144,72 +146,27 @@ export default function Footer() {
                 mx: { xs: 'auto', md: 'unset' },
               }}
             >
-              {unidade?.razaoSocial}
-              {mdUp && <br />}
-              {unidade?.cnpj}
+              {'Nome do Cinema: '}
               <br />
-              {unidade?.endereco}
+              {'Endereço do Estabelecimento: '}
             </Typography>
-
-            {state.unidade.id !== 0 && (
-              <Stack
-                direction="row"
-                justifyContent={{ xs: 'center', md: 'flex-start' }}
-                sx={{
-                  mt: 2,
-                  mb: { xs: 5, md: 0 },
-                }}
-              >
-                {SOCIALS.map((social) => (
-                  <IconButton
-                    key={social.name}
-                    sx={{
-                      '&:hover': {
-                        bgcolor: alpha(social.color, 0.08),
-                      },
-                    }}
-                  >
-                    <Iconify
-                      color={social.color}
-                      icon={social.icon}
-                      sx={{ width: 25, height: 1 }}
-                    />
-                  </IconButton>
-                ))}
-              </Stack>
-            )}
           </Grid>
           <Grid xs={12} md={2.5}></Grid>
           <Grid xs={12} md={5}>
-            <Stack
-              spacing={5}
-              direction="row"
-              sx={{ mt: { xs: state.unidade.id !== 0 ? -1 : 3, md: 0 } }}
-            >
-              {(mdUp ? LINKS : [LINKS[0], LINKS[1]]).map((list) => (
-                <Stack
-                  key={list.headline}
-                  spacing={2}
-                  alignItems={{ xs: 'center', md: 'flex-start' }}
-                  sx={{ width: 1 }}
-                >
-                  <Typography component="div" variant="overline">
-                    {list.headline}
-                  </Typography>
+            <Stack spacing={5} direction="row" sx={{ mt: { xs: 3, md: 0 } }}>
+              <Stack
+                spacing={2}
+                alignItems={{ xs: 'center', md: 'flex-start' }}
+                sx={{ width: 1 }}
+              >
+                <Typography component="div" variant="overline">
+                  {'Ajuda'}
+                </Typography>
 
-                  {(mdUp ? list.children : [list.children[0], list.children[1]]).map((link) => (
-                    <Link
-                      key={link.name}
-                      component={RouterLink}
-                      href={link.href}
-                      color="inherit"
-                      variant="body2"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </Stack>
-              ))}
+                <Link href={'link.href'} color="inherit" variant="body2">
+                  {'suport@gmail.com'}
+                </Link>
+              </Stack>
             </Stack>
           </Grid>
         </Grid>
@@ -223,8 +180,6 @@ export default function Footer() {
         <Stack direction="row" alignItems="center" justifyContent="center">
           <Typography variant="body2" textAlign={'center'}>
             ©2024. Todos os direitos reservados
-            <br /> desenvolvido por
-            <Link href=""> Softlutions </Link>
           </Typography>
         </Stack>
       </Container>
