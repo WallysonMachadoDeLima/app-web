@@ -1,18 +1,25 @@
-## NODE.JS
+# 🌐 TypeScript Web
 
-- Node 16.x || 18.x
+Projeto de estudo TypeScript para desenvolvimento web.
 
-## USING YARN (Recommend)
+## 🎯 Objetivo
 
-- yarn install
-- yarn dev
+Aprender TypeScript aplicado ao desenvolvimento web.
 
-## USING NPM
+## 🛠️ Tecnologias
 
-- npm i OR npm i --legacy-peer-deps
-- npm run dev
-                                                                                    
-## WALLYSON                                                                                        
-## Rafael
-## Renan
-## Eduardo
+- TypeScript
+- HTML5
+- CSS3
+- JavaScript
+
+## 📚 Conteúdo
+
+- Tipos e Interfaces
+- Classes e Objetos
+- Generics
+- Compilação TS
+
+---
+
+Projeto de estudo desenvolvido por Wallyson Machado de Lima
